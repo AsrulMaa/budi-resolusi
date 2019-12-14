@@ -28,23 +28,25 @@
 <script src="<?php echo base_url('assets/lte/dist/js/adminlte.min.js');?>"></script>
 <script>
   $(function () {
-    $('#example1').DataTable()
-    $('#example2').DataTable({
-      'paging'      : true,
-      'lengthChange': false,
-      'searching'   : false,
-      'ordering'    : true,
-      'info'        : true,
-      'autoWidth'   : false
-    })
+    // $('#example1').DataTable()
+    // $('#example2').DataTable({
+    //   'paging'      : true,
+    //   'lengthChange': false,
+    //   'searching'   : false,
+    //   'ordering'    : true,
+    //   'info'        : true,
+    //   'autoWidth'   : false
+    // })
+    console.log("tes")
+
   })
 </script>
 
 <script>
-$('.custom-file-input').on('change',function(){
-  let fileName = $(this).val().split('\\').pop();
-  $(this).next('custom-file-label').addClass("selected").html(fileName);
-});  
+// $('.custom-file-input').on('change',function(){
+//   let fileName = $(this).val().split('\\').pop();
+//   $(this).next('custom-file-label').addClass("selected").html(fileName);
+// });  
 </script>
 
 </body>

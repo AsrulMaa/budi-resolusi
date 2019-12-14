@@ -19,7 +19,7 @@ class admin extends CI_controller
 		$this->load->view('templates/headerlte');
 		$this->load->view('backend/admin/home',$data);
 		$this->load->view('backend/admin/sidebar');
-		$this->load->view('templates/footerlte');
+		// $this->load->view('templates/footerlte');
 	}
 
 	/*lihat data absensi*/
@@ -31,7 +31,7 @@ class admin extends CI_controller
 		// $this->load->view('backend/berkas/absensi/v_absensi',$data);
 		$this->load->view('backend/berkas/absensi/v_absensi2',$data);
 		$this->load->view('backend/admin/sidebar');
-		$this->load->view('templates/footerlte');	
+		// $this->load->view('templates/footerlte');	
 		/*print_r($data);
 		die();*/
 

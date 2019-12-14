@@ -132,11 +132,44 @@
                   <td style="font-size: 11px;" nowrap><?php echo round($a->infal+$a->infal+$a->infal3+$a->infal4+$a->infal5); ?></td>
 
                   <!-- total kehadiran , kehadiran infal, tidak masuk  -->
-                  <td style="font-size: 11px;" nowrap><?php echo round(($a->tmh+$a->tmh2+$a->tmh3+$a->tmh4+$a->tmh5) / ($a->tms+$a->tms2+$a->tms3+$a->tms4+$a->tms5)*100,1); ?> %</td>
+                  <td style="font-size: 11px;" nowrap>
+                    <?php 
 
-                  <td style="font-size: 11px;" nowrap><?php echo round(($a->infal+$a->infal+$a->infal3+$a->infal4+$a->infal5) / ($a->tms+$a->tms2+$a->tms3+$a->tms4+$a->tms5)*100,1) ?> %</td>
+                      $val1 = ($a->tmh+$a->tmh2+$a->tmh3+$a->tmh4+$a->tmh5);
+                      $val2 = ($a->tms+$a->tms2+$a->tms3+$a->tms4+$a->tms5);
 
-                  <td style="font-size: 11px;" nowrap><?php echo round (100-($a->tmh+$a->tmh2+$a->tmh3+$a->tmh4+$a->tmh5) / ($a->tms+$a->tms2+$a->tms3+$a->tms4+$a->tms5)*100,1) + ($a->infal+$a->infal+$a->infal3+$a->infal4+$a->infal5) / ($a->tms+$a->tms2+$a->tms3+$a->tms4+$a->tms5) ?> %</td>
+                      if($val1 != 0 && $val2 !=0){
+                        echo round( $val1/$val2 *100,1);
+                      } else {
+                        echo "0";
+                      }
+                     ?> %
+                  </td>
+
+                  <td style="font-size: 11px;" nowrap><?php
+                    $val3 = ($a->infal+$a->infal+$a->infal3+$a->infal4+$a->infal5);
+                    $val4 = ($a->tms+$a->tms2+$a->tms3+$a->tms4+$a->tms5);
+
+                    if ($val3 != 0 && $val4 !=0) {
+                      echo round($val3 / $val4 *100,1);   
+                    }
+                    else {
+                      echo "0";
+                    }
+                    ?> %</td>
+
+                  <td style="font-size: 11px;" nowrap><?php 
+                  $val5 = ($a->tmh+$a->tmh2+$a->tmh3+$a->tmh4+$a->tmh5);
+                  $val6 = ($a->tms+$a->tms2+$a->tms3+$a->tms4+$a->tms5);
+                  $val7 = ($a->infal+$a->infal+$a->infal3+$a->infal4+$a->infal5);
+                  $val8 = ($a->tms+$a->tms2+$a->tms3+$a->tms4+$a->tms5);
+                    if ( $val5 !=0 && $val6 !=0 ) {
+                      echo round (100- $val5/ $val6 *100,1) + $val7 / $val8;    
+                    }
+                    else{
+                      echo " 0";}
+                     ?> %</td>
+                    
                  
 
               </tr>
@@ -159,5 +192,25 @@
       <!-- /.row -->
     </section>
     <!-- /.content -->
+    <button id="btn-submit">click</button>
   </div>
+  <?php $this->load->view('templates/footerlte')?>
   <!-- /.content-wrapper -->
+  <script type="text/javascript">
+    $(function () {
+    // $('#example1').DataTable()
+    // $('#example2').DataTable({
+    //   'paging'      : true,
+    //   'lengthChange': false,
+    //   'searching'   : false,
+    //   'ordering'    : true,
+    //   'info'        : true,
+    //   'autoWidth'   : false
+    // })
+    console.log("tes2")
+    $("#btn-submit").click(function(){
+      window.alert("open")
+    })
+
+  })
+  </script>
